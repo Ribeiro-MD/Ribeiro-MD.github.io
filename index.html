@@ -307,14 +307,7 @@
     </div>
   </section>
 
-  <section class="block alt" id="sobre">
-    <div class="container">
-      <h2>Sobre</h2>
-      <p class="about-text">BLAHBLAHBLAHBLAH</p>
-    </div>
-  </section>
-
-  <section class="block" id="projetos">
+  <section class="block alt" id="projetos">
     <div class="container">
       <h2>Projetos</h2>
       <div class="tabs" role="tablist" aria-label="Categorias de projetos" id="tabs"></div>
@@ -324,7 +317,7 @@
     </div>
   </section>
 
-  <section class="block alt" id="competencias">
+  <section class="block" id="competencias">
     <div class="container">
       <h2>Competências</h2>
       <div class="skills">
@@ -341,7 +334,7 @@
     </div>
   </section>
 
-  <section class="block" id="github">
+  <section class="block alt" id="github">
     <div class="container">
       <h2>GitHub</h2>
 
@@ -362,7 +355,7 @@
         <div class="gh-stat"><strong id="gh-repos">–</strong><span>Repositórios</span></div>
         <div class="gh-stat"><strong id="gh-followers">–</strong><span>Seguidores</span></div>
         <div class="gh-stat"><strong id="gh-following">–</strong><span>A seguir</span></div>
-        <div class="gh-stat"><strong id="gh-contribs">–</strong><span>Contribuições (1 ano)</span></div>
+        <div class="gh-stat"><strong id="gh-contribs">–</strong><span>Contribuições (último mês)</span></div>
       </div>
 
       <div class="gh-activity">
@@ -378,7 +371,7 @@
     </div>
   </section>
 
-  <section class="block alt cta" id="contactos">
+  <section class="block cta" id="contactos">
     <div class="container">
       <h2>Contactos</h2>
       <p>Tens um projeto em mente ou queres simplesmente trocar ideias? Fala comigo.</p>
@@ -484,7 +477,9 @@
         grid.appendChild(frag);
         var n = (data.total && data.total.lastYear != null) ? data.total.lastYear : sum;
         total.innerHTML = '<strong>' + n + '</strong> contribuições no último ano';
-        document.getElementById("gh-contribs").textContent = n;
+        var mesAtual = days[days.length - 1].date.slice(0, 7), doMes = 0;
+        days.forEach(function (d) { if (d.date.slice(0, 7) === mesAtual) doMes += d.count; });
+        document.getElementById("gh-contribs").textContent = doMes;
         var sc = document.getElementById("gh-scroll");
         sc.scrollLeft = sc.scrollWidth;
       })
