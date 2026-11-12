@@ -182,6 +182,7 @@
   #dlg-projeto .dlg-body li + li { margin-top: 4px; }
   #dlg-projeto .dlg-body .chips { margin-bottom: 22px; }
   .dlg-links { display: flex; gap: 10px; flex-wrap: wrap; }
+  .dlg-links .privado { align-self: center; font-weight: 600; color: var(--accent-soft); }
 
   /* Atividade no GitHub */
   .gh-activity { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 22px; }
@@ -547,8 +548,9 @@
   /* ------------------------------------------------------------
      PROJETOS: para acrescentar um, copia uma entrada e edita.
      Campos: nome, tag, resumo, detalhes, funcionalidades[], tech[],
-             publicado (true/false), links[{t, u}]
+             publicado (true/false), privado (true/false), links[{t, u}]
      Sem "links" usa o perfil do GitHub.
+     privado: true mostra "Privado" em vez de "Pedir código".
   ------------------------------------------------------------ */
   (function () {
     var GITHUB = "https://github.com/Ribeiro-MD";
@@ -693,12 +695,8 @@
             resumo: "Sistema de progressão por ranks para um servidor real.",
             detalhes: "Plugin de ranks desenvolvido para o servidor Pombacraft, onde os jogadores vão subindo de nível.",
             funcionalidades: ["Progressão por ranks", "Feito para um servidor em produção"],
-            tech: ["Java", "Bukkit"] },
-          { nome: "Plots", en: {"tag": "Land", "resumo": "Base plugin to claim and protect land.", "detalhes": "Simple version of a plots system, where each player claims their own land.", "funcionalidades": ["/plot claim and unclaim to claim and free land", "/plot trust and untrust to give other players access", "/plot menu, teleport and info", "Protection for claimed land"]}, tag: "Terrenos",
-            resumo: "Plugin base para reclamar e proteger terrenos.",
-            detalhes: "Versão simples de um sistema de plots, em que cada jogador reclama o seu terreno.",
-            funcionalidades: ["/plot claim e unclaim para reclamar e libertar terrenos", "/plot trust e untrust para dar acesso a outros jogadores", "/plot menu, teleportar e info", "Proteção do terreno reclamado"],
-            tech: ["Java", "Bukkit"] }
+            tech: ["Java", "Bukkit"],
+            privado: true }
         ]
       }
         ]
@@ -815,7 +813,7 @@
         var foot = el("div", "pfoot");
         var links = el("div", "plinks");
         var lista = (p.links || []).slice(0, temCodigo(p) ? 2 : 1);
-        if (!temCodigo(p)) lista = lista.concat([{ t: "Pedir código", u: mailCodigo(p), mail: true }]);
+        if (!temCodigo(p) && !p.privado) lista = lista.concat([{ t: "Pedir código", u: mailCodigo(p), mail: true }]);
         // projetos com site ("Testa aqui" / "Ver site") mostram só o botão, sem o link do código
         var testa = (p.links || []).filter(eSite);
         if (testa.length) lista = testa;
@@ -826,6 +824,7 @@
           a.addEventListener("click", function (e) { e.stopPropagation(); });
           links.appendChild(a);
         });
+        if (p.privado) links.appendChild(el("span", null, emIngles() ? "Private" : "Privado"));
         var logos = el("div", "pico");
         (p.tech || []).forEach(function (t) {
           if (!ICONOS[t]) return;
@@ -873,13 +872,14 @@
       if (p.downloads != null) body.appendChild(el("p", "dl-line", "⬇ " + (p.total || p.downloads) + " downloads"));
       var box = el("div", "dlg-links");
       var botoes = (p.links || []).slice();
-      if (!temCodigo(p)) botoes.push({ t: "Pedir código por email", u: mailCodigo(p), mail: true });
+      if (!temCodigo(p) && !p.privado) botoes.push({ t: "Pedir código por email", u: mailCodigo(p), mail: true });
       botoes.forEach(function (l, i) {
         var a = el("a", i === 0 ? "btn" : "btn ghost", rotulo(l.t));
         a.href = l.u;
         if (!l.mail) { a.target = "_blank"; a.rel = "noopener"; }
         box.appendChild(a);
       });
+      if (p.privado) box.appendChild(el("span", "privado", emIngles() ? "Private" : "Privado"));
       body.appendChild(box);
       dlg.showModal();
     }
