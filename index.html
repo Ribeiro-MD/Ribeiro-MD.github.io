@@ -835,9 +835,9 @@
         var links = el("div", "plinks");
         var lista = (p.links || []).slice(0, temCodigo(p) ? 2 : 1);
         if (!temCodigo(p) && !p.privado) lista = lista.concat([{ t: "Pedir código", u: mailCodigo(p), mail: true }]);
-        // projetos com site ("Testa aqui" / "Ver site") mostram só o botão, sem o link do código
+        // projetos com site ("Testa aqui" / "Ver site") mostram só o botão e o CurseForge, sem o link do código
         var testa = (p.links || []).filter(eSite);
-        if (testa.length) lista = testa;
+        if (testa.length) lista = testa.concat((p.links || []).filter(function (l) { return l.t === "CurseForge"; }));
         lista.forEach(function (l) {
           var a = el("a", eSite(l) ? "testa" : null, rotulo(l.t));
           a.href = l.u;
