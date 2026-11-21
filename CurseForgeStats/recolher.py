@@ -12,11 +12,13 @@ import re
 import sys
 import time
 import urllib.request
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
 API = "https://api.cfwidget.com"
 FICHEIRO = Path(__file__).with_name("historico.js")
+# registos mais antigos que isto ficam reduzidos a um por dia, para o ficheiro não crescer sem fim
+DIAS_DETALHE = 30
 
 
 def buscar(url, tentativas=5):
@@ -78,6 +80,20 @@ def carregar():
     return json.loads(txt[txt.index("=") + 1:].strip().rstrip(";"))
 
 
+def compactar(hist):
+    """Tira os downloads por ficheiro e, antes dos últimos DIAS_DETALHE dias, fica só o último registo de cada dia."""
+    limite = datetime.now(timezone.utc) - timedelta(days=DIAS_DETALHE)
+    por_dia, recentes = {}, []
+    for s in sorted(hist, key=lambda s: s["t"]):
+        for p in s["p"].values():
+            p.pop("f", None)
+        if datetime.fromisoformat(s["t"]) >= limite:
+            recentes.append(s)
+        else:
+            por_dia[s["t"][:10]] = s
+    return list(por_dia.values()) + recentes
+
+
 def main():
     try:
         links, autores = ler_fontes(sys.argv[1:])
@@ -95,15 +111,11 @@ def main():
         except RuntimeError:
             print(f"  ✕ {caminho} (não respondeu)")
             continue
-        snap["p"][str(d["id"])] = {
-            "n": d["title"],
-            "d": d["downloads"]["total"],
-            "f": {str(f["id"]): f["downloads"] for f in d.get("files", [])},
-        }
+        # só nome e total: a página não usa os downloads de cada ficheiro no histórico
+        snap["p"][str(d["id"])] = {"n": d["title"], "d": d["downloads"]["total"]}
         print(f"  {d['title']:<20} {d['downloads']['total']:>7}")
 
-    hist = carregar()
-    hist.append(snap)
+    hist = compactar(carregar() + [snap])
     FICHEIRO.write_text("window.HISTORICO = " + json.dumps(hist, ensure_ascii=False) + ";\n", encoding="utf-8")
     total = sum(p["d"] for p in snap["p"].values())
     print(f"Total {total} · {len(hist)} registos em {FICHEIRO.name}")
