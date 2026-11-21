@@ -1,0 +1,7 @@
+# Um link do CurseForge por linha (também aceita o ID numérico ou só o nome do mod).
+# Linhas começadas por # são ignoradas. Para juntar todos os projetos de um autor: autor: NomeDoAutor
+https://www.curseforge.com/minecraft/mc-mods/fish-notifier
+https://www.curseforge.com/minecraft/mc-mods/item-seeker
+https://www.curseforge.com/minecraft/mc-mods/kick-notifier
+https://www.curseforge.com/minecraft/mc-mods/favserver
+https://www.curseforge.com/minecraft/mc-mods/immersive-ride
