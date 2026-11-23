@@ -1052,30 +1052,6 @@ window.PROJETOS = [
             "privado": true
           },
           {
-            "nome": "Pokébola",
-            "en": {
-              "nome": "Pokéball",
-              "tag": "Items",
-              "resumo": "A Pokéball that captures mobs and gives back their spawn egg.",
-              "detalhes": "Throw the Pokéball at a mob and you get its spawn egg back.",
-              "funcionalidades": [
-                "Captures mobs",
-                "Gives back the spawn egg"
-              ]
-            },
-            "tag": "Itens",
-            "resumo": "Uma Pokébola que captura mobs e devolve o ovo de spawn.",
-            "detalhes": "Atiras a Pokébola a um mob e ela devolve o ovo de spawn dele.",
-            "funcionalidades": [
-              "Captura mobs",
-              "Devolve o ovo de spawn"
-            ],
-            "tech": [
-              "Java",
-              "Paper"
-            ]
-          },
-          {
             "nome": "DMR Enchanted Books",
             "en": {
               "tag": "Enchantments",
