@@ -405,7 +405,6 @@
 
       <div class="gh-stats">
         <div class="gh-stat"><strong id="gh-projetos">–</strong><span><span lang="pt">Projetos</span><span lang="en">Projects</span></span></div>
-        <div class="gh-stat"><strong id="gh-followers">–</strong><span><span lang="pt">Seguidores</span><span lang="en">Followers</span></span></div>
         <div class="gh-stat"><strong id="gh-downloads">–</strong><span><span lang="pt">Downloads no CurseForge</span><span lang="en">CurseForge downloads</span></span></div>
         <div class="gh-stat" id="gh-contribs-card" hidden><strong id="gh-contribs"></strong><span><span lang="pt">Contribuições (mês)</span><span lang="en">Contributions (month)</span></span></div>
       </div>
@@ -559,7 +558,6 @@
     fetch("https://api.github.com/users/" + USER)
       .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
       .then(function (u) {
-        set("gh-followers", u.followers);
         if (u.bio) set("gh-bio", u.bio);
       }).catch(function () {});
   })();
