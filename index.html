@@ -683,7 +683,7 @@
         card.tabIndex = 0;
         card.appendChild(el("span", "tag", tx(p, "tag")));
         var h = el("h3", null, tx(p, "nome"));
-        if (p.estado === "publicado") h.appendChild(el("span", "badge", emIngles() ? "Published" : "Publicado"));
+        if (p.estado === "publicado" && cat.id !== "destaques") h.appendChild(el("span", "badge", emIngles() ? "Published" : "Publicado"));
         if (p.estado === "dev") h.appendChild(el("span", "badge dev", emIngles() ? "In development" : "Em desenvolvimento"));
         card.appendChild(h);
         card.appendChild(el("p", null, tx(p, "resumo")));
