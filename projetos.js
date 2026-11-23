@@ -1101,9 +1101,8 @@ window.PROJETOS = [
             ]
           },
           {
-            "nome": "Íman",
+            "nome": "DMR Enchanted Books",
             "en": {
-              "nome": "Magnet",
               "tag": "Enchantments",
               "resumo": "Magnet enchanted book: drops go straight to your inventory.",
               "detalhes": "New enchantment that sends the drops of what you break straight to your inventory.",
