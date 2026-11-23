@@ -16,7 +16,7 @@
      modrinth      nome do projeto no Modrinth: soma os downloads de lá
      destaque      true: aparece na aba Destaques
 
-   Downloads do CurseForge atualizados a 21/11/2026.
+   Downloads do CurseForge atualizados a 23/11/2026.
 ------------------------------------------------------------------- */
 window.PROJETOS = [
   {
@@ -607,7 +607,7 @@ window.PROJETOS = [
               ]
             },
             "tag": "Mod · Fabric - Neoforge",
-            "downloads": 162,
+            "downloads": 249,
             "resumo": "Torna andar a cavalo mais imersivo: inclinação nas curvas, balanço do galope e impacto ao aterrar.",
             "detalhes": "Mod de cliente que dá vida à câmara quando andas a cavalo. Tu e o cavalo inclinam nas curvas como numa mota, a câmara acompanha o ritmo do galope e sente o impacto quando aterras de um salto. Publicado no CurseForge.",
             "funcionalidades": [
@@ -648,7 +648,7 @@ window.PROJETOS = [
               ]
             },
             "tag": "Mod · Neoforge - Quilt - Forge",
-            "downloads": 109,
+            "downloads": 151,
             "resumo": "Troca o botão do Realms no menu inicial por um botão para o teu servidor favorito.",
             "detalhes": "Mod de cliente que põe o teu servidor favorito no menu inicial, no lugar do botão do Realms, com o ícone do servidor. Entras com um clique, sem passar pela lista de servidores. Publicado no CurseForge.",
             "funcionalidades": [
@@ -728,7 +728,7 @@ window.PROJETOS = [
               ]
             },
             "tag": "Mod · Fabric",
-            "downloads": 56,
+            "downloads": 62,
             "resumo": "Avisa-te no Discord quando és desconectado de um servidor.",
             "detalhes": "Mod de cliente que te avisa no Discord, por webhook, quando és kickado, o servidor vai abaixo ou perdes a ligação. A mensagem diz a conta, o servidor, o tempo online e o motivo. Ideal para quem deixa o jogo AFK.",
             "funcionalidades": [
