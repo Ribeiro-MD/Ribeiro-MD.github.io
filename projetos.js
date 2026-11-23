@@ -27,96 +27,140 @@ window.PROJETOS = [
     },
     "nome": "Apps",
     "desc": "Aplicações Android, desktop, web e extensões de browser.",
-    "itens": [
+    "subs": [
       {
-        "nome": "Anti IA-Slop",
+        "id": "android",
+        "nome": "Android",
+        "desc": "Apps para Android, várias ligadas ao PC.",
         "en": {
-          "tag": "Browser extension",
-          "resumo": "Warns you when you're on a site suspected of scams or phishing.",
-          "detalhes": "Browser extension that checks the page you're on and shows a warning when there are signs of a scam or phishing, before you enter any data.",
-          "funcionalidades": [
-            "Checks against a public phishing list",
-            "Local checks on the page itself",
-            "Optional AI analysis",
-            "Toolbar icon that changes with the risk level"
-          ]
+          "nome": "Android",
+          "desc": "Android apps, several of them talking to the PC."
         },
-        "tag": "Extensão de browser",
-        "resumo": "Avisa o utilizador quando está num site suspeito de burla ou phishing.",
-        "detalhes": "Extensão de browser que analisa a página em que estás e mostra um aviso quando há sinais de burla ou phishing, antes de introduzires dados.",
-        "funcionalidades": [
-          "Verificação contra uma lista pública de phishing",
-          "Testes locais à própria página",
-          "Análise opcional com IA",
-          "Ícone na barra que muda consoante o risco"
-        ],
-        "tech": [
-          "JavaScript",
-          "WebExtensions"
-        ]
+        "itens": []
       },
       {
-        "nome": "Dimensionamento Fotovoltaico",
+        "id": "desktop",
+        "nome": "Desktop",
+        "desc": "Programas para Linux e Windows.",
         "en": {
-          "nome": "PV System Sizing",
-          "tag": "Desktop app",
-          "resumo": "Windows Forms app for sizing solar panel installations.",
-          "detalhes": "Desktop tool that helps size a photovoltaic installation from the data the user enters.",
-          "funcionalidades": [
-            "Windows Forms interface",
-            "Panel sizing calculation"
-          ]
+          "nome": "Desktop",
+          "desc": "Programs for Linux and Windows."
         },
-        "tag": "Aplicação desktop",
-        "resumo": "Aplicação Windows Forms para dimensionar instalações de painéis solares.",
-        "detalhes": "Ferramenta desktop que ajuda a calcular o dimensionamento de uma instalação fotovoltaica a partir dos dados introduzidos pelo utilizador.",
-        "funcionalidades": [
-          "Interface Windows Forms",
-          "Cálculo de dimensionamento de painéis"
-        ],
-        "tech": [
-          "C#",
-          "WinForms"
-        ]
-      },
-      {
-        "nome": "ASCII Art by RibeiroMD",
-        "en": {
-          "tag": "Webapp",
-          "resumo": "Turns any image into art made of characters, right in the browser.",
-          "detalhes": "Open an image from your device and the page turns it into ASCII art, with control over width, contrast and brightness. It all runs in the browser, without sending the image anywhere.",
-          "funcionalidades": [
-            "Opens any image from your device",
-            "Adjustable width, contrast and brightness",
-            "Several character sets",
-            "Colour or mono mode, with invert and black background options",
-            "Copy the result with one tap"
-          ]
-        },
-        "tag": "Webapp",
-        "resumo": "Transforma qualquer imagem em arte feita de caracteres, direto no browser.",
-        "detalhes": "Abres uma imagem do teu dispositivo e a página converte-a em ASCII art, com controlo da largura, do contraste e do brilho. Corre toda no browser, sem enviar a imagem para lado nenhum.",
-        "funcionalidades": [
-          "Abre qualquer imagem do dispositivo",
-          "Largura, contraste e brilho ajustáveis",
-          "Vários conjuntos de caracteres",
-          "Modo a cores ou monocor, com opção de inverter e fundo preto",
-          "Copia o resultado com um toque"
-        ],
-        "links": [
+        "itens": [
           {
-            "t": "Testa aqui",
-            "u": "https://ribeiro-md.github.io/ASCIIartDMR/"
-          },
-          {
-            "t": "Código",
-            "u": "https://github.com/Ribeiro-MD/ASCIIartDMR"
+            "nome": "Dimensionamento Fotovoltaico",
+            "en": {
+              "nome": "PV System Sizing",
+              "tag": "Desktop app",
+              "resumo": "Windows Forms app for sizing solar panel installations.",
+              "detalhes": "Desktop tool that helps size a photovoltaic installation from the data the user enters.",
+              "funcionalidades": [
+                "Windows Forms interface",
+                "Panel sizing calculation"
+              ]
+            },
+            "tag": "Aplicação desktop",
+            "resumo": "Aplicação Windows Forms para dimensionar instalações de painéis solares.",
+            "detalhes": "Ferramenta desktop que ajuda a calcular o dimensionamento de uma instalação fotovoltaica a partir dos dados introduzidos pelo utilizador.",
+            "funcionalidades": [
+              "Interface Windows Forms",
+              "Cálculo de dimensionamento de painéis"
+            ],
+            "tech": [
+              "C#",
+              "WinForms"
+            ]
           }
-        ],
-        "tech": [
-          "HTML",
-          "CSS",
-          "JavaScript"
+        ]
+      },
+      {
+        "id": "web",
+        "nome": "Web",
+        "desc": "Páginas e ferramentas que correm no browser.",
+        "en": {
+          "nome": "Web",
+          "desc": "Pages and tools that run in the browser."
+        },
+        "itens": [
+          {
+            "nome": "ASCII Art by RibeiroMD",
+            "en": {
+              "tag": "Webapp",
+              "resumo": "Turns any image into art made of characters, right in the browser.",
+              "detalhes": "Open an image from your device and the page turns it into ASCII art, with control over width, contrast and brightness. It all runs in the browser, without sending the image anywhere.",
+              "funcionalidades": [
+                "Opens any image from your device",
+                "Adjustable width, contrast and brightness",
+                "Several character sets",
+                "Colour or mono mode, with invert and black background options",
+                "Copy the result with one tap"
+              ]
+            },
+            "tag": "Webapp",
+            "resumo": "Transforma qualquer imagem em arte feita de caracteres, direto no browser.",
+            "detalhes": "Abres uma imagem do teu dispositivo e a página converte-a em ASCII art, com controlo da largura, do contraste e do brilho. Corre toda no browser, sem enviar a imagem para lado nenhum.",
+            "funcionalidades": [
+              "Abre qualquer imagem do dispositivo",
+              "Largura, contraste e brilho ajustáveis",
+              "Vários conjuntos de caracteres",
+              "Modo a cores ou monocor, com opção de inverter e fundo preto",
+              "Copia o resultado com um toque"
+            ],
+            "links": [
+              {
+                "t": "Testa aqui",
+                "u": "https://ribeiro-md.github.io/ASCIIartDMR/"
+              },
+              {
+                "t": "Código",
+                "u": "https://github.com/Ribeiro-MD/ASCIIartDMR"
+              }
+            ],
+            "tech": [
+              "HTML",
+              "CSS",
+              "JavaScript"
+            ],
+            "destaque": true
+          }
+        ]
+      },
+      {
+        "id": "extensoes",
+        "nome": "Extensões",
+        "desc": "Extensões de browser.",
+        "en": {
+          "nome": "Extensions",
+          "desc": "Browser extensions."
+        },
+        "itens": [
+          {
+            "nome": "Anti IA-Slop",
+            "en": {
+              "tag": "Browser extension",
+              "resumo": "Warns you when you're on a site suspected of scams or phishing.",
+              "detalhes": "Browser extension that checks the page you're on and shows a warning when there are signs of a scam or phishing, before you enter any data.",
+              "funcionalidades": [
+                "Checks against a public phishing list",
+                "Local checks on the page itself",
+                "Optional AI analysis",
+                "Toolbar icon that changes with the risk level"
+              ]
+            },
+            "tag": "Extensão de browser",
+            "resumo": "Avisa o utilizador quando está num site suspeito de burla ou phishing.",
+            "detalhes": "Extensão de browser que analisa a página em que estás e mostra um aviso quando há sinais de burla ou phishing, antes de introduzires dados.",
+            "funcionalidades": [
+              "Verificação contra uma lista pública de phishing",
+              "Testes locais à própria página",
+              "Análise opcional com IA",
+              "Ícone na barra que muda consoante o risco"
+            ],
+            "tech": [
+              "JavaScript",
+              "WebExtensions"
+            ]
+          }
         ]
       }
     ]
@@ -277,7 +321,8 @@ window.PROJETOS = [
             "t": "Ver site",
             "u": "https://ribeiro-md.github.io/KBMacroWebPage/"
           }
-        ]
+        ],
+        "destaque": true
       }
     ]
   },
@@ -313,7 +358,6 @@ window.PROJETOS = [
               ]
             },
             "tag": "Mod · Fabric",
-            "publicado": true,
             "downloads": 168,
             "modrinth": "",
             "resumo": "Alertas quando o peixe morde a isca e quando se apanha um caranguejo.",
@@ -332,7 +376,51 @@ window.PROJETOS = [
                 "t": "CurseForge",
                 "u": "https://www.curseforge.com/minecraft/mc-mods/fish-notifier"
               }
-            ]
+            ],
+            "estado": "publicado",
+            "destaque": true
+          },
+          {
+            "nome": "Immersive Ride",
+            "en": {
+              "tag": "Mod · Fabric - Neoforge",
+              "resumo": "Makes horse riding more immersive: leaning into turns, gallop sway and landing impact.",
+              "detalhes": "Client mod that brings the camera to life while you ride. You and the horse lean into turns like on a motorbike, the camera follows the rhythm of the gallop and takes a hit when you land a jump. Published on CurseForge.",
+              "funcionalidades": [
+                "Leaning into turns, on the camera and on the horse and player models",
+                "Vertical and horizontal gallop sway",
+                "Landing impact and a slightly wider FOV at speed",
+                "Settings screen with H, plus a key to turn it on/off",
+                "Available for Fabric and NeoForge",
+                "In English and Portuguese",
+                "Minecraft 1.21.11 and 26.1 to 26.3 · version 1.0.2"
+              ]
+            },
+            "tag": "Mod · Fabric - Neoforge",
+            "downloads": 162,
+            "resumo": "Torna andar a cavalo mais imersivo: inclinação nas curvas, balanço do galope e impacto ao aterrar.",
+            "detalhes": "Mod de cliente que dá vida à câmara quando andas a cavalo. Tu e o cavalo inclinam nas curvas como numa mota, a câmara acompanha o ritmo do galope e sente o impacto quando aterras de um salto. Publicado no CurseForge.",
+            "funcionalidades": [
+              "Inclinação nas curvas, na câmara e nos modelos do cavalo e do jogador",
+              "Balanço do galope na vertical e na horizontal",
+              "Impacto ao aterrar e FOV um pouco mais aberto em velocidade",
+              "Ecrã de definições com H e tecla para ligar/desligar",
+              "Disponível para Fabric e NeoForge",
+              "Em português e em inglês",
+              "Minecraft 1.21.11 e 26.1 a 26.3 · versão 1.0.2"
+            ],
+            "tech": [
+              "Fabric",
+              "NeoForge"
+            ],
+            "links": [
+              {
+                "t": "CurseForge",
+                "u": "https://www.curseforge.com/minecraft/mc-mods/immersive-ride"
+              }
+            ],
+            "estado": "publicado",
+            "destaque": true
           },
           {
             "nome": "FavServer",
@@ -351,7 +439,6 @@ window.PROJETOS = [
               ]
             },
             "tag": "Mod · Neoforge - Quilt - Forge",
-            "publicado": true,
             "downloads": 109,
             "resumo": "Troca o botão do Realms no menu inicial por um botão para o teu servidor favorito.",
             "detalhes": "Mod de cliente que põe o teu servidor favorito no menu inicial, no lugar do botão do Realms, com o ícone do servidor. Entras com um clique, sem passar pela lista de servidores. Publicado no CurseForge.",
@@ -375,7 +462,9 @@ window.PROJETOS = [
                 "t": "CurseForge",
                 "u": "https://www.curseforge.com/minecraft/mc-mods/favserver"
               }
-            ]
+            ],
+            "estado": "publicado",
+            "destaque": true
           },
           {
             "nome": "Item Seeker",
@@ -391,7 +480,6 @@ window.PROJETOS = [
               ]
             },
             "tag": "Mod · Fabric",
-            "publicado": true,
             "downloads": 69,
             "resumo": "Encontra e seleciona um item pelo nome em qualquer inventário aberto.",
             "detalhes": "Escreves o nome exato do item e o mod encontra-o e seleciona-o logo no inventário que tiveres aberto. Publicado no CurseForge.",
@@ -413,7 +501,8 @@ window.PROJETOS = [
                 "t": "GitHub",
                 "u": "https://github.com/Ribeiro-MD"
               }
-            ]
+            ],
+            "estado": "publicado"
           },
           {
             "nome": "Kick Notifier",
@@ -431,7 +520,6 @@ window.PROJETOS = [
               ]
             },
             "tag": "Mod · Fabric",
-            "publicado": true,
             "downloads": 56,
             "resumo": "Avisa-te no Discord quando és desconectado de um servidor.",
             "detalhes": "Mod de cliente que te avisa no Discord, por webhook, quando és kickado, o servidor vai abaixo ou perdes a ligação. A mensagem diz a conta, o servidor, o tempo online e o motivo. Ideal para quem deixa o jogo AFK.",
@@ -455,48 +543,8 @@ window.PROJETOS = [
                 "t": "CurseForge",
                 "u": "https://www.curseforge.com/minecraft/mc-mods/kick-notifier/"
               }
-            ]
-          },
-          {
-            "nome": "Immersive Ride",
-            "en": {
-              "tag": "Mod · Fabric - Neoforge",
-              "resumo": "Makes horse riding more immersive: leaning into turns, gallop sway and landing impact.",
-              "detalhes": "Client mod that brings the camera to life while you ride. You and the horse lean into turns like on a motorbike, the camera follows the rhythm of the gallop and takes a hit when you land a jump. Published on CurseForge.",
-              "funcionalidades": [
-                "Leaning into turns, on the camera and on the horse and player models",
-                "Vertical and horizontal gallop sway",
-                "Landing impact and a slightly wider FOV at speed",
-                "Settings screen with H, plus a key to turn it on/off",
-                "Available for Fabric and NeoForge",
-                "In English and Portuguese",
-                "Minecraft 1.21.11 and 26.1 to 26.3 · version 1.0.2"
-              ]
-            },
-            "tag": "Mod · Fabric - Neoforge",
-            "publicado": true,
-            "downloads": 162,
-            "resumo": "Torna andar a cavalo mais imersivo: inclinação nas curvas, balanço do galope e impacto ao aterrar.",
-            "detalhes": "Mod de cliente que dá vida à câmara quando andas a cavalo. Tu e o cavalo inclinam nas curvas como numa mota, a câmara acompanha o ritmo do galope e sente o impacto quando aterras de um salto. Publicado no CurseForge.",
-            "funcionalidades": [
-              "Inclinação nas curvas, na câmara e nos modelos do cavalo e do jogador",
-              "Balanço do galope na vertical e na horizontal",
-              "Impacto ao aterrar e FOV um pouco mais aberto em velocidade",
-              "Ecrã de definições com H e tecla para ligar/desligar",
-              "Disponível para Fabric e NeoForge",
-              "Em português e em inglês",
-              "Minecraft 1.21.11 e 26.1 a 26.3 · versão 1.0.2"
             ],
-            "tech": [
-              "Fabric",
-              "NeoForge"
-            ],
-            "links": [
-              {
-                "t": "CurseForge",
-                "u": "https://www.curseforge.com/minecraft/mc-mods/immersive-ride"
-              }
-            ]
+            "estado": "publicado"
           },
           {
             "nome": "AFK Optimizer",
