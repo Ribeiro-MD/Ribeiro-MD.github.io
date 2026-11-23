@@ -213,10 +213,9 @@
   .gh-cell.l4 { background: var(--accent-soft); }
   .gh-legend { display: flex; align-items: center; gap: 4px; justify-content: flex-end; margin-top: 12px; font-size: 0.75rem; color: var(--muted); }
   .gh-legend .gh-cell { width: 11px; height: 11px; }
-  .gh-fallback { color: var(--muted); }
 
   .gh-profile { display: flex; align-items: center; gap: 24px; margin-bottom: 24px; flex-wrap: wrap; }
-  .gh-pic { width: 110px; height: 110px; border-radius: 50%; border: 4px solid var(--ring); background: #000; object-fit: cover; }
+  .gh-pic { width: 110px; height: 110px; flex: none; border-radius: 50%; border: 4px solid var(--ring); background: #000; object-fit: cover; overflow: hidden; font-size: 0.7rem; color: var(--muted); text-align: center; }
   .gh-info h3 { font-size: 1.5rem; line-height: 1.2; }
   .gh-bio { color: var(--muted); margin: 4px 0 14px; max-width: 520px; overflow-wrap: anywhere; }
   .gh-actions { display: flex; gap: 10px; flex-wrap: wrap; }
@@ -392,7 +391,7 @@
       <h2>GitHub</h2>
 
       <div class="gh-profile">
-        <img class="gh-pic" src="https://github.com/Ribeiro-MD.png?size=200" alt="Foto de perfil do GitHub">
+        <img class="gh-pic" src="https://github.com/Ribeiro-MD.png?size=200" onerror="this.onerror=null;this.src='img/foto.png'" alt="Foto de perfil do GitHub">
         <div class="gh-info">
           <h3>Ribeiro-MD</h3>
           <p class="gh-bio" id="gh-bio"><span lang="pt">O meu código, mods e experiências.</span><span lang="en">My code, mods and experiments.</span></p>
@@ -408,10 +407,10 @@
         <div class="gh-stat"><strong id="gh-projetos">–</strong><span><span lang="pt">Projetos</span><span lang="en">Projects</span></span></div>
         <div class="gh-stat"><strong id="gh-followers">–</strong><span><span lang="pt">Seguidores</span><span lang="en">Followers</span></span></div>
         <div class="gh-stat"><strong id="gh-downloads">–</strong><span><span lang="pt">Downloads no CurseForge</span><span lang="en">CurseForge downloads</span></span></div>
-        <div class="gh-stat"><strong id="gh-contribs">–</strong><span><span lang="pt">Contribuições (mês)</span><span lang="en">Contributions (month)</span></span></div>
+        <div class="gh-stat" id="gh-contribs-card" hidden><strong id="gh-contribs"></strong><span><span lang="pt">Contribuições (mês)</span><span lang="en">Contributions (month)</span></span></div>
       </div>
 
-      <div class="gh-activity">
+      <div class="gh-activity" id="gh-activity">
         <p class="gh-total" id="gh-total" aria-live="polite"><span lang="pt">A carregar contribuições…</span><span lang="en">Loading contributions…</span></p>
         <div class="gh-scroll" id="gh-scroll">
           <div class="gh-inner">
@@ -492,19 +491,16 @@
     var MESES = { pt: ["Jan","Fev","Mar","Abr","Mai","Jun","Jul","Ago","Set","Out","Nov","Dez"], en: ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"] };
     var estado = null;
     function escreverTextos() {
-      if (estado === "falhou") {
-        total.innerHTML = '<span class="gh-fallback">' + (en() ? "Couldn't load the chart. " : "Não foi possível carregar o gráfico. ") + '</span><a href="https://github.com/' + USER + '" target="_blank" rel="noopener">' + (en() ? "View on GitHub ↗" : "Ver no GitHub ↗") + '</a>';
-      } else if (estado != null) {
+      if (estado != null) {
         total.innerHTML = '<strong>' + estado + '</strong> ' + (en() ? "contributions in the last year" : "contribuições no último ano");
         document.querySelectorAll("#gh-months span").forEach(function (s) { s.textContent = MESES[en() ? "en" : "pt"][+s.dataset.m]; });
         document.querySelectorAll("#gh-grid .gh-cell").forEach(function (c) { c.title = c.dataset.n + (en() ? " contributions on " : " contribuições em ") + c.dataset.d; });
       }
     }
     window.aoMudarIdioma.push(escreverTextos);
+    // se a API falhar, a caixa do gráfico e o cartão do mês ficam escondidos
     function fail() {
-      document.getElementById("gh-contribs").textContent = "–";
-      estado = "falhou";
-      escreverTextos();
+      document.getElementById("gh-activity").hidden = true;
     }
     fetch("https://github-contributions-api.jogruber.de/v4/" + USER + "?y=last")
       .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
@@ -550,6 +546,7 @@
         var mesAtual = days[days.length - 1].date.slice(0, 7), doMes = 0;
         days.forEach(function (d) { if (d.date.slice(0, 7) === mesAtual) doMes += d.count; });
         document.getElementById("gh-contribs").textContent = doMes;
+        document.getElementById("gh-contribs-card").hidden = false;
         var sc = document.getElementById("gh-scroll");
         sc.scrollLeft = sc.scrollWidth;
       })
