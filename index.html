@@ -80,22 +80,8 @@
   .lang:hover { color: #fff; background: var(--card); }
 
   /* Hero */
-  .hero { padding: 20px 0 60px; min-height: 360px; display: flex; align-items: center; }
-  .hero .container { width: 100%; }
-  .hero-grid { display: grid; grid-template-columns: 1.3fr 1fr; gap: 50px; align-items: center; }
-  .hero h1 { font-size: clamp(2.4rem, 6vw, 3rem); line-height: 1.1; margin-bottom: 14px; font-weight: 700; }
-  .hero h1 em { font-style: normal; color: var(--accent); }
-  .hero p.lead { color: var(--text); font-size: 0.92rem; max-width: 560px; }
-
-  .avatar-wrap { display: flex; justify-content: center; }
-  .avatar {
-    width: min(246px, 70vw); aspect-ratio: 1; border-radius: 50%;
-    padding: 5px; background: var(--ring);
-  }
-  .avatar img {
-    width: 100%; height: 100%; display: block; border-radius: 50%;
-    object-fit: cover; background: #000;
-  }
+  .hero { padding: 20px 0 50px; }
+  .banner { display: block; width: 100%; height: auto; border-radius: var(--radius); border: 1px solid var(--border); }
 
   /* Secções */
   section.block { padding: 70px 0; }
@@ -272,10 +258,7 @@
   .link-item .arrow { margin-left: auto; color: var(--muted); }
 
   @media (max-width: 760px) {
-    .hero { padding: 40px 0 60px; }
-    .hero-grid { grid-template-columns: 1fr; gap: 34px; text-align: center; }
-    .hero p.lead { margin-left: auto; margin-right: auto; }
-    .avatar-wrap { order: -1; }
+    .hero { padding: 24px 0 40px; }
   }
   @media (max-width: 480px) {
     .logo { font-size: 0.85rem; }
@@ -336,18 +319,8 @@
 
 <main>
   <section class="hero" id="inicio">
-    <div class="container hero-grid">
-      <div>
-        <h1>Ribeiro<em>MD</em></h1>
-        <p class="lead">
-          <span lang="pt">Olá, sou o Ribeiro! Transformo ideias em soluções.<br>
-          Nos tempos livres foco em conteúdo interativo!</span><span lang="en">Hi, I'm Ribeiro! I turn ideas into solutions.<br>
-          In my free time my focus is interactive content!</span>
-        </p>
-      </div>
-      <div class="avatar-wrap">
-        <div class="avatar"><img src="img/avatar.png" alt="Avatar do Ribeiro: personagem de cabelo castanho a saborear uma chávena de café"></div>
-      </div>
+    <div class="container">
+      <img class="banner" src="img/banner.png" width="1920" height="480" alt="Ribeiro-MD: Small, useful, well-made mods. Fabric, NeoForge, Paper">
     </div>
   </section>
 
@@ -811,9 +784,9 @@
   (function () {
     var TEXTOS = {
       pt: { title: "RibeiroMD", desc: "Portefólio Ribeiro", botao: "ENG", fechar: "Fechar", cats: "Categorias de projetos", subs: "Subcategorias",
-            avatar: "Avatar do Ribeiro: personagem de cabelo castanho a saborear uma chávena de café", foto: "Foto de perfil do GitHub", grafico: "Gráfico de contribuições do GitHub no último ano" },
+            banner: "Banner do Ribeiro-MD: mods pequenos, úteis e bem feitos para Fabric, NeoForge e Paper", foto: "Foto de perfil do GitHub", grafico: "Gráfico de contribuições do GitHub no último ano" },
       en: { title: "RibeiroMD", desc: "Ribeiro's portfolio", botao: "PT", fechar: "Close", cats: "Project categories", subs: "Subcategories",
-            avatar: "Ribeiro's avatar: a brown-haired character enjoying a cup of coffee", foto: "GitHub profile picture", grafico: "GitHub contributions chart for the last year" }
+            banner: "Ribeiro-MD banner: small, useful, well-made mods for Fabric, NeoForge and Paper", foto: "GitHub profile picture", grafico: "GitHub contributions chart for the last year" }
     };
     function mudaIdioma(l, inicio) {
       var t = TEXTOS[l];
@@ -824,7 +797,7 @@
       document.querySelectorAll(".close").forEach(function (b) { b.setAttribute("aria-label", t.fechar); });
       document.getElementById("tabs").setAttribute("aria-label", t.cats);
       document.getElementById("subtabs").setAttribute("aria-label", t.subs);
-      document.querySelector(".avatar img").alt = t.avatar;
+      document.querySelector(".banner").alt = t.banner;
       document.querySelector(".gh-pic").alt = t.foto;
       document.getElementById("gh-grid").setAttribute("aria-label", t.grafico);
       if (!inicio) window.aoMudarIdioma.forEach(function (f) { f(); });
