@@ -299,8 +299,8 @@
 
     .pgrid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
     .pgrid.centrar .project { flex-basis: calc((100% - 12px) / 2); min-width: 0; }
-    .pgrid .project { padding: 14px; }
-    .pgrid .project .tag { font-size: 0.6rem; letter-spacing: .05em; margin-bottom: 6px; }
+    .pgrid .project { padding: 10px; }
+    .pgrid .project .tag { font-size: 0.52rem; letter-spacing: .02em; margin-bottom: 4px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
     .pgrid .project h3 { font-size: 0.98rem; line-height: 1.25; margin-bottom: 6px; overflow-wrap: anywhere; }
     .pgrid .project p { font-size: 0.8rem; line-height: 1.45; margin-bottom: 10px; }
     .pfoot { gap: 6px; }
@@ -309,6 +309,10 @@
     .pico-i { width: 20px; height: 20px; }
     .pgrid .project .dl { margin-top: 8px; font-size: 0.75rem; }
     .badge { margin-left: 4px; font-size: 0.6rem; padding: 1px 7px; }
+  }
+  @media (max-width: 399px) {
+    .pgrid { grid-template-columns: 1fr; }
+    .pgrid.centrar .project { flex-basis: 100%; }
   }
   @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
