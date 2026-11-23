@@ -802,26 +802,6 @@ window.PROJETOS = [
             ]
           },
           {
-            "nome": "Translate Chat",
-            "en": {
-              "tag": "Mod · Fabric",
-              "resumo": "Automatically translates incoming chat messages.",
-              "detalhes": "Shows other players' messages already translated, so you can follow conversations in other languages.",
-              "funcionalidades": [
-                "Automatic translation of incoming chat"
-              ]
-            },
-            "tag": "Mod · Fabric",
-            "resumo": "Traduz automaticamente as mensagens recebidas no chat.",
-            "detalhes": "Mostra as mensagens de outros jogadores já traduzidas, para acompanhares conversas noutras línguas.",
-            "funcionalidades": [
-              "Tradução automática do chat recebido"
-            ],
-            "tech": [
-              "Fabric"
-            ]
-          },
-          {
             "nome": "Random Chest",
             "en": {
               "tag": "Mod · Fabric",
