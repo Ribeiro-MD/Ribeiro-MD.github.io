@@ -184,6 +184,10 @@
   .pico { display: flex; gap: 8px; align-items: center; margin-left: auto; }
   .pico-i { display: inline-flex; width: 26px; height: 26px; }
   .pico-i svg { width: 100%; height: 100%; }
+  /* Destaques: a última linha fica centrada em vez de deixar um buraco */
+  .pgrid.centrar { display: flex; flex-wrap: wrap; justify-content: center; }
+  .pgrid.centrar .project { flex: 0 0 calc((100% - 44px) / 3); }
+  @media (max-width: 901px) { .pgrid.centrar .project { flex-basis: calc((100% - 22px) / 2); } }
   .pgrid .project:focus-visible { outline: 2px solid var(--ring); outline-offset: 3px; }
   @keyframes fade { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
 
@@ -294,6 +298,7 @@
     .tab-desc { font-size: 0.9rem; margin-bottom: 18px; }
 
     .pgrid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+    .pgrid.centrar .project { flex-basis: calc((100% - 12px) / 2); min-width: 0; }
     .pgrid .project { padding: 14px; }
     .pgrid .project .tag { font-size: 0.6rem; letter-spacing: .05em; margin-bottom: 6px; }
     .pgrid .project h3 { font-size: 0.98rem; line-height: 1.25; margin-bottom: 6px; overflow-wrap: anywhere; }
@@ -667,6 +672,7 @@
       document.getElementById("statsbtn").hidden = !(sub && sub.id === "mods");
       grid.setAttribute("aria-labelledby", sub ? "subtab-" + sub.id : "tab-" + cat.id);
       grid.textContent = "";
+      grid.classList.toggle("centrar", cat.id === "destaques");
       alvo.itens.forEach(function (p) {
         var card = el("div", "project");
         card.setAttribute("role", "button");
