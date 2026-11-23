@@ -153,128 +153,6 @@ window.PROJETOS = [
               "Kotlin",
               "Android"
             ]
-          },
-          {
-            "nome": "DMRGram",
-            "en": {
-              "tag": "Android app",
-              "resumo": "Telegram client for Android, with a Rust core.",
-              "detalhes": "A Telegram client built from scratch: the interface in Kotlin and the low-level part in Rust.",
-              "funcionalidades": [
-                "Telegram client",
-                "Kotlin interface",
-                "Rust core"
-              ]
-            },
-            "tag": "App Android",
-            "resumo": "Cliente de Telegram para Android, com núcleo em Rust.",
-            "detalhes": "Cliente de Telegram feito de raiz: a interface em Kotlin e a parte de baixo nível em Rust.",
-            "funcionalidades": [
-              "Cliente de Telegram",
-              "Interface em Kotlin",
-              "Núcleo em Rust"
-            ],
-            "tech": [
-              "Kotlin",
-              "Android"
-            ]
-          },
-          {
-            "nome": "Caderno de Treino",
-            "en": {
-              "nome": "Workout Notebook",
-              "tag": "Android app",
-              "resumo": "Workout notebook with a home-screen widget showing your training days.",
-              "detalhes": "App to log your workouts, with a home-screen widget that shows the days you trained.",
-              "funcionalidades": [
-                "Workout log",
-                "Home-screen widget with your training days"
-              ]
-            },
-            "tag": "App Android",
-            "resumo": "Caderno de treino com widget no ecrã inicial com os dias de treino.",
-            "detalhes": "App para registar os treinos, com um widget no ecrã inicial que mostra os dias em que treinaste.",
-            "funcionalidades": [
-              "Registo dos treinos",
-              "Widget no ecrã inicial com os dias de treino"
-            ],
-            "tech": [
-              "Kotlin",
-              "Android"
-            ]
-          },
-          {
-            "nome": "Comando Hisense",
-            "en": {
-              "nome": "Hisense Remote",
-              "tag": "Android app",
-              "resumo": "Remote control for Hisense (VIDAA) TVs over Wi-Fi.",
-              "detalhes": "Turns your phone into a remote for Hisense TVs running VIDAA, over Wi-Fi, without the physical remote.",
-              "funcionalidades": [
-                "Controls the TV over Wi-Fi",
-                "Finds the TV automatically"
-              ]
-            },
-            "tag": "App Android",
-            "resumo": "Comando para TVs Hisense (VIDAA) pela rede Wi-Fi.",
-            "detalhes": "Transforma o telemóvel num comando para televisões Hisense com VIDAA, pela rede Wi-Fi, sem precisar do comando físico.",
-            "funcionalidades": [
-              "Controla a TV pela rede Wi-Fi",
-              "Deteção automática da TV"
-            ],
-            "tech": [
-              "Kotlin",
-              "Android"
-            ]
-          },
-          {
-            "nome": "RibeiroPad",
-            "en": {
-              "tag": "Android app",
-              "resumo": "Notes and ideas app, with categories, link previews and themes.",
-              "detalhes": "App to keep notes and ideas, organised by category.",
-              "funcionalidades": [
-                "Categories",
-                "Link previews",
-                "Themes"
-              ]
-            },
-            "tag": "App Android",
-            "resumo": "Bloco de notas e ideias, com categorias, pré-visualização de links e temas.",
-            "detalhes": "App para guardar notas e ideias, organizadas por categorias.",
-            "funcionalidades": [
-              "Categorias",
-              "Pré-visualização de links",
-              "Temas"
-            ],
-            "tech": [
-              "Kotlin",
-              "Android"
-            ]
-          },
-          {
-            "nome": "Horários Viewer",
-            "en": {
-              "nome": "Timetable Viewer",
-              "tag": "Android app",
-              "resumo": "Check class timetables and teachers.",
-              "detalhes": "App to check class timetables and teachers.",
-              "funcionalidades": [
-                "Timetables",
-                "Teachers"
-              ]
-            },
-            "tag": "App Android",
-            "resumo": "Consulta horários e professores.",
-            "detalhes": "App para consultar os horários das aulas e os professores.",
-            "funcionalidades": [
-              "Horários",
-              "Professores"
-            ],
-            "tech": [
-              "Kotlin",
-              "Android"
-            ]
           }
         ]
       },
@@ -710,8 +588,7 @@ window.PROJETOS = [
                 "u": "https://www.curseforge.com/minecraft/mc-mods/fish-notifier"
               }
             ],
-            "estado": "publicado",
-            "destaque": true
+            "estado": "publicado"
           },
           {
             "nome": "Immersive Ride",
@@ -752,8 +629,7 @@ window.PROJETOS = [
                 "u": "https://www.curseforge.com/minecraft/mc-mods/immersive-ride"
               }
             ],
-            "estado": "publicado",
-            "destaque": true
+            "estado": "publicado"
           },
           {
             "nome": "FavServer",
@@ -796,8 +672,7 @@ window.PROJETOS = [
                 "u": "https://www.curseforge.com/minecraft/mc-mods/favserver"
               }
             ],
-            "estado": "publicado",
-            "destaque": true
+            "estado": "publicado"
           },
           {
             "nome": "Item Seeker",
@@ -877,7 +752,8 @@ window.PROJETOS = [
                 "u": "https://www.curseforge.com/minecraft/mc-mods/kick-notifier/"
               }
             ],
-            "estado": "publicado"
+            "estado": "publicado",
+            "destaque": true
           },
           {
             "nome": "AFK Optimizer",
