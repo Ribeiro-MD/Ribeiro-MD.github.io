@@ -36,7 +36,247 @@ window.PROJETOS = [
           "nome": "Android",
           "desc": "Android apps, several of them talking to the PC."
         },
-        "itens": []
+        "itens": [
+          {
+            "nome": "DeskStats",
+            "en": {
+              "tag": "Android app + PC",
+              "resumo": "Your PC in a phone widget: CPU, GPU, RAM and temperatures.",
+              "detalhes": "Android widget that shows your PC's status, refreshed every 2 seconds. A small agent runs on the PC (C# on Windows, Python on Linux) and serves the values on the local network.",
+              "funcionalidades": [
+                "CPU, GPU, RAM and temperatures on the home screen",
+                "Refreshes every 2 seconds",
+                "Agent for Windows (C#) and Linux (Python)",
+                "One-line installer on Linux, starts with the PC"
+              ]
+            },
+            "tag": "App Android + PC",
+            "resumo": "O teu PC num widget do telemóvel: CPU, GPU, RAM e temperaturas.",
+            "detalhes": "Widget Android que mostra o estado do PC, atualizado a cada 2 segundos. No PC corre um pequeno agente (C# no Windows, Python no Linux) que serve os valores na rede local.",
+            "funcionalidades": [
+              "CPU, GPU, RAM e temperaturas no ecrã inicial",
+              "Atualiza a cada 2 segundos",
+              "Agente para Windows (C#) e Linux (Python)",
+              "Instalador de uma linha no Linux, arranca sozinho com o PC"
+            ],
+            "tech": [
+              "Kotlin",
+              "Android",
+              "C#"
+            ],
+            "destaque": true,
+            "links": [
+              {
+                "t": "Ver site",
+                "u": "https://ribeiro-md.github.io/Deskstats/"
+              }
+            ]
+          },
+          {
+            "nome": "DMR Remote",
+            "en": {
+              "tag": "Android app + Linux",
+              "resumo": "Control your Arch Linux PC from your phone, with a terminal and system buttons.",
+              "detalhes": "Android app that connects to the PC (local network or Tailscale) to control it remotely: a real terminal and buttons for system actions. The PC side only shares while its app is open, protected by a token.",
+              "funcionalidades": [
+                "Real terminal on the phone",
+                "System buttons",
+                "Local network or Tailscale, with a token",
+                "Only shares while the PC app is open"
+              ]
+            },
+            "tag": "App Android + Linux",
+            "resumo": "Controla o Arch Linux pelo telemóvel, com terminal e botões de sistema.",
+            "detalhes": "App Android que se liga ao PC (rede local ou Tailscale) para o controlar à distância: um terminal real e botões para as ações do sistema. No PC corre uma app que só partilha enquanto estiver aberta, protegida por token.",
+            "funcionalidades": [
+              "Terminal real no telemóvel",
+              "Botões de sistema",
+              "Ligação por rede local ou Tailscale, com token",
+              "Só partilha enquanto a app do PC está aberta"
+            ],
+            "tech": [
+              "Kotlin",
+              "Android",
+              "Python"
+            ],
+            "estado": "dev"
+          },
+          {
+            "nome": "StreamDeck Mobile",
+            "en": {
+              "tag": "Android app + PC",
+              "resumo": "Use your phone as a Stream Deck: shortcuts, music, text, programs and commands.",
+              "detalhes": "A full-screen grid of buttons on your phone. Each tap presses a shortcut, controls music, types text, opens a program or runs a command on the PC.",
+              "funcionalidades": [
+                "Full-screen button grid",
+                "Keyboard shortcuts, music, text, programs and commands",
+                "Agent for Windows (tray, starts with the system) and Linux",
+                "Works alongside DeskStats"
+              ]
+            },
+            "tag": "App Android + PC",
+            "resumo": "Usa o telemóvel como Stream Deck: atalhos, música, texto, programas e comandos.",
+            "detalhes": "Uma grelha de botões em ecrã inteiro no telemóvel. Cada toque carrega num atalho, controla a música, escreve texto, abre um programa ou corre um comando no PC.",
+            "funcionalidades": [
+              "Grelha de botões em ecrã inteiro",
+              "Atalhos de teclado, música, texto, programas e comandos",
+              "Agente para Windows (bandeja, arranca com o sistema) e Linux",
+              "Funciona ao mesmo tempo que o DeskStats"
+            ],
+            "tech": [
+              "Kotlin",
+              "Android",
+              "C#"
+            ]
+          },
+          {
+            "nome": "PocketMic",
+            "en": {
+              "tag": "Android app + PC",
+              "resumo": "Use your phone's microphone on your PC, with low latency.",
+              "detalhes": "The app streams the phone's microphone to the PC, where it shows up as a virtual microphone any program can use.",
+              "funcionalidades": [
+                "USB (lower latency) or Wi-Fi connection",
+                "Virtual mic on Windows (VB-Cable) and Linux (PipeWire)",
+                "Python server on the PC"
+              ]
+            },
+            "tag": "App Android + PC",
+            "resumo": "Usa o microfone do telemóvel no PC, com pouca latência.",
+            "detalhes": "A app manda o som do microfone do telemóvel para o PC, onde aparece como um microfone virtual que qualquer programa pode usar.",
+            "funcionalidades": [
+              "Ligação por USB (menos latência) ou Wi-Fi",
+              "Microfone virtual no Windows (VB-Cable) e no Linux (PipeWire)",
+              "Servidor em Python no PC"
+            ],
+            "tech": [
+              "Kotlin",
+              "Android"
+            ]
+          },
+          {
+            "nome": "DMRGram",
+            "en": {
+              "tag": "Android app",
+              "resumo": "Telegram client for Android, with a Rust core.",
+              "detalhes": "A Telegram client built from scratch: the interface in Kotlin and the low-level part in Rust.",
+              "funcionalidades": [
+                "Telegram client",
+                "Kotlin interface",
+                "Rust core"
+              ]
+            },
+            "tag": "App Android",
+            "resumo": "Cliente de Telegram para Android, com núcleo em Rust.",
+            "detalhes": "Cliente de Telegram feito de raiz: a interface em Kotlin e a parte de baixo nível em Rust.",
+            "funcionalidades": [
+              "Cliente de Telegram",
+              "Interface em Kotlin",
+              "Núcleo em Rust"
+            ],
+            "tech": [
+              "Kotlin",
+              "Android"
+            ]
+          },
+          {
+            "nome": "Caderno de Treino",
+            "en": {
+              "nome": "Workout Notebook",
+              "tag": "Android app",
+              "resumo": "Workout notebook with a home-screen widget showing your training days.",
+              "detalhes": "App to log your workouts, with a home-screen widget that shows the days you trained.",
+              "funcionalidades": [
+                "Workout log",
+                "Home-screen widget with your training days"
+              ]
+            },
+            "tag": "App Android",
+            "resumo": "Caderno de treino com widget no ecrã inicial com os dias de treino.",
+            "detalhes": "App para registar os treinos, com um widget no ecrã inicial que mostra os dias em que treinaste.",
+            "funcionalidades": [
+              "Registo dos treinos",
+              "Widget no ecrã inicial com os dias de treino"
+            ],
+            "tech": [
+              "Kotlin",
+              "Android"
+            ]
+          },
+          {
+            "nome": "Comando Hisense",
+            "en": {
+              "nome": "Hisense Remote",
+              "tag": "Android app",
+              "resumo": "Remote control for Hisense (VIDAA) TVs over Wi-Fi.",
+              "detalhes": "Turns your phone into a remote for Hisense TVs running VIDAA, over Wi-Fi, without the physical remote.",
+              "funcionalidades": [
+                "Controls the TV over Wi-Fi",
+                "Finds the TV automatically"
+              ]
+            },
+            "tag": "App Android",
+            "resumo": "Comando para TVs Hisense (VIDAA) pela rede Wi-Fi.",
+            "detalhes": "Transforma o telemóvel num comando para televisões Hisense com VIDAA, pela rede Wi-Fi, sem precisar do comando físico.",
+            "funcionalidades": [
+              "Controla a TV pela rede Wi-Fi",
+              "Deteção automática da TV"
+            ],
+            "tech": [
+              "Kotlin",
+              "Android"
+            ]
+          },
+          {
+            "nome": "RibeiroPad",
+            "en": {
+              "tag": "Android app",
+              "resumo": "Notes and ideas app, with categories, link previews and themes.",
+              "detalhes": "App to keep notes and ideas, organised by category.",
+              "funcionalidades": [
+                "Categories",
+                "Link previews",
+                "Themes"
+              ]
+            },
+            "tag": "App Android",
+            "resumo": "Bloco de notas e ideias, com categorias, pré-visualização de links e temas.",
+            "detalhes": "App para guardar notas e ideias, organizadas por categorias.",
+            "funcionalidades": [
+              "Categorias",
+              "Pré-visualização de links",
+              "Temas"
+            ],
+            "tech": [
+              "Kotlin",
+              "Android"
+            ]
+          },
+          {
+            "nome": "Horários Viewer",
+            "en": {
+              "nome": "Timetable Viewer",
+              "tag": "Android app",
+              "resumo": "Check class timetables and teachers.",
+              "detalhes": "App to check class timetables and teachers.",
+              "funcionalidades": [
+                "Timetables",
+                "Teachers"
+              ]
+            },
+            "tag": "App Android",
+            "resumo": "Consulta horários e professores.",
+            "detalhes": "App para consultar os horários das aulas e os professores.",
+            "funcionalidades": [
+              "Horários",
+              "Professores"
+            ],
+            "tech": [
+              "Kotlin",
+              "Android"
+            ]
+          }
+        ]
       },
       {
         "id": "desktop",
@@ -47,6 +287,67 @@ window.PROJETOS = [
           "desc": "Programs for Linux and Windows."
         },
         "itens": [
+          {
+            "nome": "MAIA",
+            "en": {
+              "tag": "Personal assistant · Linux",
+              "resumo": "AI personal assistant for Linux: talks, searches, runs commands and remembers you.",
+              "detalhes": "MAIA (My Assistant IA) lives in its own window on KDE and in the tray. It uses several AIs with key rotation, listens and answers out loud, searches the web, runs commands on the PC (asking first) and keeps its memory and reminders in Obsidian.",
+              "funcionalidades": [
+                "Gemini, Grok, Groq, OpenRouter and Cerebras, with key rotation",
+                "Voice in and out, with a local voice (Piper) as backup",
+                "Runs commands on the PC, asking first for risky ones",
+                "Memory and reminders (with a calendar) in Obsidian",
+                "Sees images, PDFs and the screen"
+              ]
+            },
+            "tag": "Assistente pessoal · Linux",
+            "resumo": "Assistente pessoal com IA para o Linux: fala, pesquisa, corre comandos e lembra-se de ti.",
+            "detalhes": "A MAIA (My Assistant IA) vive numa janela própria no KDE e na bandeja. Usa várias IAs com rotação de chaves, ouve e responde em voz alta, pesquisa na web, corre comandos no PC (pedindo confirmação) e guarda a memória e os lembretes no Obsidian.",
+            "funcionalidades": [
+              "Gemini, Grok, Groq, OpenRouter e Cerebras, com rotação de chaves",
+              "Voz: fala e ouve, com voz local (Piper) de reserva",
+              "Comandos no PC, com confirmação para os perigosos",
+              "Memória e lembretes (com calendário) no Obsidian",
+              "Vê imagens, PDFs e o ecrã"
+            ],
+            "tech": [
+              "Rust",
+              "JavaScript"
+            ],
+            "destaque": true,
+            "estado": "dev",
+            "links": [
+              {
+                "t": "Ver site",
+                "u": "https://ribeiro-md.github.io/SiteMaia/"
+              }
+            ]
+          },
+          {
+            "nome": "Ribeiro Launcher",
+            "en": {
+              "tag": "Desktop · Linux",
+              "resumo": "Minecraft launcher for Linux, with accounts and CurseForge modpacks.",
+              "detalhes": "Minecraft launcher made with Java and Swing, with no external libraries.",
+              "funcionalidades": [
+                "Account management",
+                "Installs CurseForge modpacks",
+                "Java 17+ and Swing, no external libraries"
+              ]
+            },
+            "tag": "Desktop · Linux",
+            "resumo": "Launcher de Minecraft para Linux, com contas e modpacks do CurseForge.",
+            "detalhes": "Launcher de Minecraft feito em Java e Swing, sem bibliotecas externas.",
+            "funcionalidades": [
+              "Gestão de contas",
+              "Instala modpacks do CurseForge",
+              "Java 17+ e Swing, sem bibliotecas externas"
+            ],
+            "tech": [
+              "Java"
+            ]
+          },
           {
             "nome": "Dimensionamento Fotovoltaico",
             "en": {
@@ -122,6 +423,38 @@ window.PROJETOS = [
               "JavaScript"
             ],
             "destaque": true
+          },
+          {
+            "nome": "DMRCFStats",
+            "en": {
+              "tag": "Webapp",
+              "resumo": "Stats for my CurseForge mods: downloads, growth and versions.",
+              "detalhes": "Page that tracks my CurseForge mods, with download history over time.",
+              "funcionalidades": [
+                "Downloads per mod",
+                "Growth over time",
+                "Versions"
+              ]
+            },
+            "tag": "Webapp",
+            "resumo": "Estatísticas dos meus mods no CurseForge: downloads, evolução e versões.",
+            "detalhes": "Página que acompanha os meus mods no CurseForge, com o histórico dos downloads ao longo do tempo.",
+            "funcionalidades": [
+              "Downloads de cada mod",
+              "Evolução ao longo do tempo",
+              "Versões"
+            ],
+            "tech": [
+              "HTML",
+              "CSS",
+              "JavaScript"
+            ],
+            "links": [
+              {
+                "t": "Ver site",
+                "u": "https://ribeiro-md.github.io/DMRCFStatus/"
+              }
+            ]
           }
         ]
       },
@@ -633,6 +966,77 @@ window.PROJETOS = [
             "tech": [
               "Fabric"
             ]
+          },
+          {
+            "nome": "DMR Valley",
+            "en": {
+              "tag": "Mod · Fabric",
+              "resumo": "Stardew Valley in Minecraft: crops, HUD and world map.",
+              "detalhes": "Mod that brings Stardew Valley's farm life to Minecraft.",
+              "funcionalidades": [
+                "Crops",
+                "Custom HUD",
+                "World map"
+              ]
+            },
+            "tag": "Mod · Fabric",
+            "resumo": "Stardew Valley no Minecraft: culturas, HUD e mapa do mundo.",
+            "detalhes": "Mod que traz a vida de quinta do Stardew Valley para o Minecraft.",
+            "funcionalidades": [
+              "Culturas",
+              "HUD próprio",
+              "Mapa do mundo"
+            ],
+            "tech": [
+              "Fabric"
+            ],
+            "estado": "dev"
+          },
+          {
+            "nome": "RibeiroBot",
+            "en": {
+              "tag": "Mod · Fabric",
+              "resumo": "AI bot (Gemini) that answers in Minecraft chat with !bot.",
+              "detalhes": "Type a question in chat starting with !bot and the bot answers using Gemini.",
+              "funcionalidades": [
+                "Answers in chat with the !bot prefix",
+                "Powered by Gemini"
+              ]
+            },
+            "tag": "Mod · Fabric",
+            "resumo": "Bot de IA (Gemini) que responde no chat do Minecraft com !bot.",
+            "detalhes": "Escreves uma pergunta no chat começada por !bot e o bot responde com o Gemini.",
+            "funcionalidades": [
+              "Responde no chat com o prefixo !bot",
+              "Usa o Gemini"
+            ],
+            "tech": [
+              "Fabric"
+            ]
+          },
+          {
+            "nome": "DMR AutoLogin",
+            "en": {
+              "tag": "Mod · Fabric",
+              "resumo": "Reconnects, logs in and runs macros when you join a server.",
+              "detalhes": "Client mod for long sessions on a server: if you drop, it joins again, logs in and replays your recorded actions.",
+              "funcionalidades": [
+                "Auto-reconnect",
+                "Automatic login",
+                "Recorded macros on join"
+              ]
+            },
+            "tag": "Mod · Fabric",
+            "resumo": "Volta a ligar sozinho, faz login e corre macros ao entrar num servidor.",
+            "detalhes": "Mod de cliente para quem fica muito tempo num servidor: se cair, volta a entrar, faz o login e repete as ações gravadas.",
+            "funcionalidades": [
+              "Auto-reconnect",
+              "Login automático",
+              "Macros gravados ao entrar num servidor"
+            ],
+            "tech": [
+              "Fabric"
+            ]
           }
         ]
       },
@@ -770,6 +1174,79 @@ window.PROJETOS = [
               "Bukkit"
             ],
             "privado": true
+          },
+          {
+            "nome": "DMRPlots",
+            "en": {
+              "tag": "Land",
+              "resumo": "Plots in an empty world, with claim, trust and a menu.",
+              "detalhes": "Land plugin: each player claims a plot in an empty world and chooses who can build there.",
+              "funcionalidades": [
+                "Dedicated empty plot world",
+                "Claim and trust",
+                "Menu"
+              ]
+            },
+            "tag": "Terrenos",
+            "resumo": "Plots num mundo vazio, com claim, trust e menu.",
+            "detalhes": "Plugin de terrenos: cada jogador reclama o seu plot num mundo vazio e escolhe quem pode construir lá.",
+            "funcionalidades": [
+              "Mundo vazio próprio para plots",
+              "Claim e trust",
+              "Menu"
+            ],
+            "tech": [
+              "Java",
+              "Paper"
+            ]
+          },
+          {
+            "nome": "Pokébola",
+            "en": {
+              "nome": "Pokéball",
+              "tag": "Items",
+              "resumo": "A Pokéball that captures mobs and gives back their spawn egg.",
+              "detalhes": "Throw the Pokéball at a mob and you get its spawn egg back.",
+              "funcionalidades": [
+                "Captures mobs",
+                "Gives back the spawn egg"
+              ]
+            },
+            "tag": "Itens",
+            "resumo": "Uma Pokébola que captura mobs e devolve o ovo de spawn.",
+            "detalhes": "Atiras a Pokébola a um mob e ela devolve o ovo de spawn dele.",
+            "funcionalidades": [
+              "Captura mobs",
+              "Devolve o ovo de spawn"
+            ],
+            "tech": [
+              "Java",
+              "Paper"
+            ]
+          },
+          {
+            "nome": "Íman",
+            "en": {
+              "nome": "Magnet",
+              "tag": "Enchantments",
+              "resumo": "Magnet enchanted book: drops go straight to your inventory.",
+              "detalhes": "New enchantment that sends the drops of what you break straight to your inventory.",
+              "funcionalidades": [
+                "Magnet enchanted book",
+                "Drops straight to your inventory"
+              ]
+            },
+            "tag": "Encantamentos",
+            "resumo": "Livro de encantamento Íman: os drops vão direto para o inventário.",
+            "detalhes": "Encantamento novo que manda os drops do que partes direto para o inventário.",
+            "funcionalidades": [
+              "Livro de encantamento Íman",
+              "Drops direto para o inventário"
+            ],
+            "tech": [
+              "Java",
+              "Paper"
+            ]
           }
         ]
       }
