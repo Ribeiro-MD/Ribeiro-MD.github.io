@@ -1052,31 +1052,6 @@ window.PROJETOS = [
             "privado": true
           },
           {
-            "nome": "DMRPlots",
-            "en": {
-              "tag": "Land",
-              "resumo": "Plots in an empty world, with claim, trust and a menu.",
-              "detalhes": "Land plugin: each player claims a plot in an empty world and chooses who can build there.",
-              "funcionalidades": [
-                "Dedicated empty plot world",
-                "Claim and trust",
-                "Menu"
-              ]
-            },
-            "tag": "Terrenos",
-            "resumo": "Plots num mundo vazio, com claim, trust e menu.",
-            "detalhes": "Plugin de terrenos: cada jogador reclama o seu plot num mundo vazio e escolhe quem pode construir lá.",
-            "funcionalidades": [
-              "Mundo vazio próprio para plots",
-              "Claim e trust",
-              "Menu"
-            ],
-            "tech": [
-              "Java",
-              "Paper"
-            ]
-          },
-          {
             "nome": "Pokébola",
             "en": {
               "nome": "Pokéball",
