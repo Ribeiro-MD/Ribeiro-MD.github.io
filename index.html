@@ -91,6 +91,7 @@
   .hero-stats { list-style: none; display: flex; gap: 28px; flex-wrap: wrap; margin-top: 30px; padding-top: 22px; border-top: 1px solid var(--border); max-width: 500px; }
   .hero-stats li { display: flex; flex-direction: column; color: var(--muted); font-size: .85rem; }
   .hero-stats strong { font-size: 1.7rem; line-height: 1.1; color: var(--text); font-variant-numeric: tabular-nums; }
+  .hero-stats[hidden] { display: none; }
 
   .avatar-wrap { display: flex; justify-content: center; }
   .avatar {
@@ -379,7 +380,7 @@
           <a class="btn" href="#projetos"><span lang="pt">Ver projetos</span><span lang="en">See projects</span></a>
           <a class="btn ghost" href="#contactos"><span lang="pt">Contactos</span><span lang="en">Contact</span></a>
         </div>
-        <ul class="hero-stats">
+        <ul class="hero-stats" hidden>
           <li><strong id="hero-projetos">–</strong><span lang="pt">projetos</span><span lang="en">projects</span></li>
           <li><strong>770</strong><span lang="pt">downloads no CurseForge</span><span lang="en">CurseForge downloads</span></li>
         </ul>
