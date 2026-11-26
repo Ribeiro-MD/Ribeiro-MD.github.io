@@ -15,6 +15,7 @@
      downloads     downloads no CurseForge (à mão, ver a data em baixo)
      modrinth      nome do projeto no Modrinth: soma os downloads de lá
      destaque      true: aparece na aba Destaques
+     imagem        captura em img/capas/, aparece no topo do cartão
 
    Downloads do CurseForge atualizados a 23/11/2026.
 ------------------------------------------------------------------- */
@@ -39,6 +40,7 @@ window.PROJETOS = [
         "itens": [
           {
             "nome": "DeskStats",
+            "imagem": "img/capas/deskstats.webp",
             "en": {
               "tag": "Android app + PC",
               "resumo": "Your PC in a phone widget: CPU, GPU, RAM and temperatures.",
@@ -167,6 +169,7 @@ window.PROJETOS = [
         "itens": [
           {
             "nome": "MAIA",
+            "imagem": "img/capas/maia.webp",
             "en": {
               "tag": "Personal assistant · Linux",
               "resumo": "AI personal assistant for Linux: talks, searches, runs commands and remembers you.",
@@ -263,6 +266,7 @@ window.PROJETOS = [
         "itens": [
           {
             "nome": "ASCII Art by RibeiroMD",
+            "imagem": "img/capas/ascii.webp",
             "en": {
               "tag": "Webapp",
               "resumo": "Turns any image into art made of characters, right in the browser.",
@@ -500,6 +504,7 @@ window.PROJETOS = [
       },
       {
         "nome": "DMR | KBMacro",
+        "imagem": "img/capas/kbmacro.webp",
         "en": {
           "tag": "Automation · Linux",
           "resumo": "Turns one key into another key, a combo or a timed macro, on Linux.",
@@ -550,10 +555,10 @@ window.PROJETOS = [
         "id": "mods",
         "en": {
           "nome": "Mods",
-          "desc": "Client-side Minecraft mods built with Fabric."
+          "desc": "Client-side Minecraft mods for Fabric and NeoForge."
         },
         "nome": "Mods",
-        "desc": "Mods de cliente para Minecraft com Fabric.",
+        "desc": "Mods de cliente para Minecraft, para Fabric e NeoForge.",
         "itens": [
           {
             "nome": "Fish Notifier",
@@ -570,7 +575,6 @@ window.PROJETOS = [
             },
             "tag": "Mod · Fabric",
             "downloads": 168,
-            "modrinth": "",
             "resumo": "Alertas quando o peixe morde a isca e quando se apanha um caranguejo.",
             "detalhes": "Mod de cliente que te avisa no momento certo durante a pesca, para não teres de olhar para o ecrã o tempo todo. Publicado no CurseForge.",
             "funcionalidades": [
@@ -593,7 +597,7 @@ window.PROJETOS = [
           {
             "nome": "Immersive Ride",
             "en": {
-              "tag": "Mod · Fabric - Neoforge",
+              "tag": "Mod · Fabric - NeoForge",
               "resumo": "Makes horse riding more immersive: leaning into turns, gallop sway and landing impact.",
               "detalhes": "Client mod that brings the camera to life while you ride. You and the horse lean into turns like on a motorbike, the camera follows the rhythm of the gallop and takes a hit when you land a jump. Published on CurseForge.",
               "funcionalidades": [
@@ -606,7 +610,7 @@ window.PROJETOS = [
                 "Minecraft 1.21.11 and 26.1 to 26.3 · version 1.0.2"
               ]
             },
-            "tag": "Mod · Fabric - Neoforge",
+            "tag": "Mod · Fabric - NeoForge",
             "downloads": 249,
             "resumo": "Torna andar a cavalo mais imersivo: inclinação nas curvas, balanço do galope e impacto ao aterrar.",
             "detalhes": "Mod de cliente que dá vida à câmara quando andas a cavalo. Tu e o cavalo inclinam nas curvas como numa mota, a câmara acompanha o ritmo do galope e sente o impacto quando aterras de um salto. Publicado no CurseForge.",
@@ -634,7 +638,7 @@ window.PROJETOS = [
           {
             "nome": "FavServer",
             "en": {
-              "tag": "Mod · Fabric - Neoforge - Quilt - Forge",
+              "tag": "Mod · Fabric - NeoForge - Quilt - Forge",
               "resumo": "Swaps the Realms button on the title screen for a button to your favourite server.",
               "detalhes": "Client mod that puts your favourite server on the title screen, in place of the Realms button, with the server's icon. You join in one click, without going through the server list. Published on CurseForge.",
               "funcionalidades": [
@@ -647,7 +651,7 @@ window.PROJETOS = [
                 "Minecraft 1.21.11 and 26.1 to 26.3 · version 1.0.0"
               ]
             },
-            "tag": "Mod · Neoforge - Quilt - Forge",
+            "tag": "Mod · Fabric - NeoForge - Quilt - Forge",
             "downloads": 151,
             "resumo": "Troca o botão do Realms no menu inicial por um botão para o teu servidor favorito.",
             "detalhes": "Mod de cliente que põe o teu servidor favorito no menu inicial, no lugar do botão do Realms, com o ícone do servidor. Entras com um clique, sem passar pela lista de servidores. Publicado no CurseForge.",
@@ -749,11 +753,46 @@ window.PROJETOS = [
               },
               {
                 "t": "CurseForge",
-                "u": "https://www.curseforge.com/minecraft/mc-mods/kick-notifier/"
+                "u": "https://www.curseforge.com/minecraft/mc-mods/kick-notifier"
               }
             ],
             "estado": "publicado",
             "destaque": true
+          },
+          {
+            "nome": "DMRecording",
+            "en": {
+              "tag": "Mod · Fabric - NeoForge",
+              "resumo": "Records gameplay and saves instant replay clips in-game with FFmpeg.",
+              "detalhes": "In-game screen recorder that sends the frames straight to FFmpeg, with hardware encoding and system audio. A replay buffer keeps the last seconds so you can save a clip with one key.",
+              "funcionalidades": [
+                "Recording with hardware encoding (VAAPI) or CPU (x264)",
+                "System audio through PulseAudio/PipeWire",
+                "Replay buffer: saves the last seconds as a clip with F10",
+                "Downscaling on the GPU to weigh less on the game",
+                "In-game gallery and REC indicator",
+                "Available for Fabric and NeoForge",
+                "In English and Portuguese",
+                "Minecraft 1.21.11 and 26.1 to 26.3 · version 1.0.4"
+              ]
+            },
+            "tag": "Mod · Fabric - NeoForge",
+            "resumo": "Grava o jogo e guarda clipes dos últimos segundos, com o FFmpeg.",
+            "detalhes": "Gravador de ecrã dentro do jogo que envia os frames diretamente para o FFmpeg, com codificação na placa gráfica e som do sistema. Um buffer guarda os últimos segundos para gravares um clipe com uma tecla.",
+            "funcionalidades": [
+              "Gravação com codificação na placa gráfica (VAAPI) ou no CPU (x264)",
+              "Som do sistema pelo PulseAudio/PipeWire",
+              "Buffer de clipes: guarda os últimos segundos com F10",
+              "Redução da resolução na GPU para pesar menos no jogo",
+              "Galeria dentro do jogo e indicador REC",
+              "Disponível para Fabric e NeoForge",
+              "Em português e em inglês",
+              "Minecraft 1.21.11 e 26.1 a 26.3 · versão 1.0.4"
+            ],
+            "tech": [
+              "Fabric",
+              "NeoForge"
+            ]
           },
           {
             "nome": "AFK Optimizer",

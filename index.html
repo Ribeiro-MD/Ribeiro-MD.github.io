@@ -80,12 +80,17 @@
   .lang:hover { color: #fff; background: var(--card); }
 
   /* Hero */
-  .hero { padding: 20px 0 60px; min-height: 360px; display: flex; align-items: center; }
+  .hero { padding: 64px 0 76px; display: flex; align-items: center; }
   .hero .container { width: 100%; }
   .hero-grid { display: grid; grid-template-columns: 1.3fr 1fr; gap: 50px; align-items: center; }
   .hero h1 { font-size: clamp(2.4rem, 6vw, 3rem); line-height: 1.1; margin-bottom: 14px; font-weight: 700; }
   .hero h1 em { font-style: normal; color: var(--accent); }
-  .hero p.lead { color: var(--text); font-size: 0.92rem; max-width: 560px; }
+  .hero p.lead { color: var(--muted); font-size: 1.08rem; max-width: 500px; }
+  .eyebrow { font: 700 .78rem ui-monospace, Menlo, monospace; letter-spacing: .14em; text-transform: uppercase; color: var(--accent-soft); margin-bottom: 14px; }
+  .hero-btns { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 28px; }
+  .hero-stats { list-style: none; display: flex; gap: 28px; flex-wrap: wrap; margin-top: 30px; padding-top: 22px; border-top: 1px solid var(--border); max-width: 500px; }
+  .hero-stats li { display: flex; flex-direction: column; color: var(--muted); font-size: .85rem; }
+  .hero-stats strong { font-size: 1.7rem; line-height: 1.1; color: var(--text); font-variant-numeric: tabular-nums; }
 
   .avatar-wrap { display: flex; justify-content: center; }
   .avatar {
@@ -184,10 +189,32 @@
   .pico { display: flex; gap: 8px; align-items: center; margin-left: auto; }
   .pico-i { display: inline-flex; width: 26px; height: 26px; }
   .pico-i svg { width: 100%; height: 100%; }
-  /* Destaques: a última linha fica centrada em vez de deixar um buraco */
-  .pgrid.centrar { display: flex; flex-wrap: wrap; justify-content: center; }
-  .pgrid.centrar .project { flex: 0 0 calc((100% - 44px) / 3); }
-  @media (max-width: 901px) { .pgrid.centrar .project { flex-basis: calc((100% - 22px) / 2); } }
+  /* Capa do cartão: captura do projeto, ou um fundo com o ícone quando não há */
+  .capa {
+    margin: -24px -22px 18px; aspect-ratio: 16 / 9; overflow: hidden;
+    border-radius: calc(var(--radius) - 1px) calc(var(--radius) - 1px) 0 0;
+    border-bottom: 1px solid var(--border); background: #120010;
+  }
+  .capa img { width: 100%; height: 100%; display: block; object-fit: cover; object-position: top; transition: transform .4s ease; }
+  .project:hover .capa img { transform: scale(1.03); }
+  .capa.vazia {
+    display: grid; place-items: center;
+    background:
+      radial-gradient(circle at 30% 20%, color-mix(in srgb, var(--accent) 45%, transparent), transparent 60%),
+      repeating-linear-gradient(45deg, transparent 0 14px, rgba(255, 255, 255, .025) 14px 15px),
+      #1d0619;
+  }
+  .capa.vazia svg { width: 64px; height: 64px; filter: drop-shadow(0 8px 20px rgba(0, 0, 0, .5)); }
+  .capa.vazia img { width: 64px; height: auto; object-fit: contain; image-rendering: pixelated; }
+
+  /* Destaques: o primeiro ocupa duas colunas, os 5 fecham duas linhas certas */
+  .pgrid.destaques { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .pgrid.destaques .project:first-child { grid-column: span 2; }
+  @media (max-width: 901px) {
+    .pgrid.destaques { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  }
+
+  #dlg-projeto .dlg-capa { width: 100%; display: block; border-bottom: 1px solid var(--border); }
   .pgrid .project:focus-visible { outline: 2px solid var(--ring); outline-offset: 3px; }
   @keyframes fade { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
 
@@ -279,7 +306,8 @@
   @media (max-width: 760px) {
     .hero { padding: 40px 0 60px; }
     .hero-grid { grid-template-columns: 1fr; gap: 34px; text-align: center; }
-    .hero p.lead { margin-left: auto; margin-right: auto; }
+    .hero p.lead, .hero-stats { margin-left: auto; margin-right: auto; }
+    .hero-btns, .hero-stats { justify-content: center; }
     .avatar-wrap { order: -1; }
   }
   @media (max-width: 480px) {
@@ -297,22 +325,17 @@
     .subtabs .tab, .subrow .statsbtn { padding: 6px 12px; font-size: 0.8rem; }
     .tab-desc { font-size: 0.9rem; margin-bottom: 18px; }
 
-    .pgrid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
-    .pgrid.centrar .project { flex-basis: calc((100% - 12px) / 2); min-width: 0; }
-    .pgrid .project { padding: 10px; }
-    .pgrid .project .tag { font-size: 0.52rem; letter-spacing: .02em; margin-bottom: 4px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-    .pgrid .project h3 { font-size: 0.98rem; line-height: 1.25; margin-bottom: 6px; overflow-wrap: anywhere; }
-    .pgrid .project p { font-size: 0.8rem; line-height: 1.45; margin-bottom: 10px; }
-    .pfoot { gap: 6px; }
-    .pfoot .plinks { gap: 8px; font-size: 0.7rem; }
-    .pico { gap: 5px; }
-    .pico-i { width: 20px; height: 20px; }
-    .pgrid .project .dl { margin-top: 8px; font-size: 0.75rem; }
-    .badge { margin-left: 4px; font-size: 0.6rem; padding: 1px 7px; }
-  }
-  @media (max-width: 399px) {
-    .pgrid { grid-template-columns: 1fr; }
-    .pgrid.centrar .project { flex-basis: 100%; }
+    /* abas numa só linha que desliza, com a ponta a desvanecer para se perceber que há mais */
+    #tabs { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; margin-right: -24px; padding-right: 24px;
+            mask-image: linear-gradient(to right, #000 85%, transparent); }
+    #tabs::-webkit-scrollbar { display: none; }
+
+    .pgrid, .pgrid.destaques { grid-template-columns: 1fr; gap: 16px; }
+    .pgrid.destaques .project:first-child { grid-column: auto; }
+    .pgrid .project { padding: 20px 18px 16px; }
+    .capa { margin: -20px -18px 16px; }
+    .pgrid .project h3 { font-size: 1.15rem; }
+    .pgrid .project p { font-size: 0.92rem; }
   }
   @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
@@ -347,12 +370,19 @@
   <section class="hero" id="inicio">
     <div class="container hero-grid">
       <div>
+        <p class="eyebrow"><span lang="pt">Apps · Automações · Minecraft</span><span lang="en">Apps · Automations · Minecraft</span></p>
         <h1>Ribeiro<em>MD</em></h1>
         <p class="lead">
-          <span lang="pt">Olá, sou o Ribeiro! Transformo ideias em soluções.<br>
-          Nos tempos livres foco em conteúdo interativo!</span><span lang="en">Hi, I'm Ribeiro! I turn ideas into solutions.<br>
-          In my free time my focus is interactive content!</span>
+          <span lang="pt">Olá, sou o Ribeiro! Faço apps Android e de PC, automações para Linux e mods e plugins de Minecraft.</span><span lang="en">Hi, I'm Ribeiro! I build Android and desktop apps, Linux automations, and Minecraft mods and plugins.</span>
         </p>
+        <div class="hero-btns">
+          <a class="btn" href="#projetos"><span lang="pt">Ver projetos</span><span lang="en">See projects</span></a>
+          <a class="btn ghost" href="#contactos"><span lang="pt">Contactos</span><span lang="en">Contact</span></a>
+        </div>
+        <ul class="hero-stats">
+          <li><strong id="hero-projetos">–</strong><span lang="pt">projetos</span><span lang="en">projects</span></li>
+          <li><strong>770</strong><span lang="pt">downloads no CurseForge</span><span lang="en">CurseForge downloads</span></li>
+        </ul>
       </div>
       <div class="avatar-wrap">
         <div class="avatar"><img src="img/avatar.png" alt="Avatar do Ribeiro: personagem de cabelo castanho a saborear uma chávena de café"></div>
@@ -402,7 +432,7 @@
       <h2>GitHub</h2>
 
       <div class="gh-profile">
-        <img class="gh-pic" src="img/github.png" width="200" height="200" alt="Foto de perfil do GitHub">
+        <img class="gh-pic" src="https://github.com/Ribeiro-MD.png?size=200" onerror="this.onerror=null;this.src='img/foto.png'" alt="Foto de perfil do GitHub">
         <div class="gh-info">
           <h3>Ribeiro-MD</h3>
           <p class="gh-bio" id="gh-bio"><span lang="pt">O meu código, mods e experiências.</span><span lang="en">My code, mods and experiments.</span></p>
@@ -425,7 +455,7 @@
         <div class="gh-scroll" id="gh-scroll">
           <div class="gh-inner">
             <div class="gh-months" id="gh-months"></div>
-            <div class="gh-grid" id="gh-grid" role="img" aria-label="Gráfico de contribuições do GitHub no último ano"></div>
+            <div class="gh-grid" id="gh-grid" role="img" aria-label="Gráfico de contribuições do GitHub nos últimos 6 meses"></div>
           </div>
         </div>
         <div class="gh-legend" aria-hidden="true"><span lang="pt">Menos</span><span lang="en">Less</span> <span class="gh-cell"></span><span class="gh-cell l1"></span><span class="gh-cell l2"></span><span class="gh-cell l3"></span><span class="gh-cell l4"></span> <span lang="pt">Mais</span><span lang="en">More</span></div>
@@ -486,7 +516,7 @@
     var estado = null;
     function escreverTextos() {
       if (estado != null) {
-        total.innerHTML = '<strong>' + estado + '</strong> ' + (en() ? "contributions in the last year" : "contribuições no último ano");
+        total.innerHTML = '<strong>' + estado + '</strong> ' + (en() ? "contributions in the last 6 months" : "contribuições nos últimos 6 meses");
         document.querySelectorAll("#gh-months span").forEach(function (s) { s.textContent = MESES[en() ? "en" : "pt"][+s.dataset.m]; });
         document.querySelectorAll("#gh-grid .gh-cell").forEach(function (c) { c.title = c.dataset.n + (en() ? " contributions on " : " contribuições em ") + c.dataset.d; });
       }
@@ -499,7 +529,8 @@
     fetch("https://github-contributions-api.jogruber.de/v4/" + USER + "?y=last")
       .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
       .then(function (data) {
-        var days = data.contributions || [];
+        // só os últimos 6 meses: o ano inteiro tinha meses vazios que davam a ideia de parado
+        var days = (data.contributions || []).slice(-182);
         if (!days.length) return fail();
         var grid = document.getElementById("gh-grid");
         var months = document.getElementById("gh-months");
@@ -534,7 +565,7 @@
           frag.appendChild(c);
         });
         grid.appendChild(frag);
-        var n = (data.total && data.total.lastYear != null) ? data.total.lastYear : sum;
+        var n = sum;
         estado = n;
         escreverTextos();
         var mesAtual = days[days.length - 1].date.slice(0, 7), doMes = 0;
@@ -676,14 +707,16 @@
       document.getElementById("statsbtn").hidden = !(sub && sub.id === "mods");
       grid.setAttribute("aria-labelledby", sub ? "subtab-" + sub.id : "tab-" + cat.id);
       grid.textContent = "";
-      grid.classList.toggle("centrar", cat.id === "destaques");
+      grid.classList.toggle("destaques", cat.id === "destaques");
       alvo.itens.forEach(function (p) {
         var card = el("div", "project");
         card.setAttribute("role", "button");
         card.tabIndex = 0;
+        // só os destaques têm capa; nas outras abas os cartões ficam compactos
+        if (cat.id === "destaques") card.appendChild(capa(p));
         card.appendChild(el("span", "tag", tx(p, "tag")));
         var h = el("h3", null, tx(p, "nome"));
-        if (p.estado === "publicado" && cat.id !== "destaques") h.appendChild(el("span", "badge", emIngles() ? "Published" : "Publicado"));
+        if (p.estado === "publicado") h.appendChild(el("span", "badge", emIngles() ? "Published" : "Publicado"));
         if (p.estado === "dev") h.appendChild(el("span", "badge dev", emIngles() ? "In development" : "Em desenvolvimento"));
         card.appendChild(h);
         card.appendChild(el("p", null, tx(p, "resumo")));
@@ -726,6 +759,19 @@
       });
     }
 
+    function capa(p) {
+      if (p.imagem) {
+        var c = el("div", "capa");
+        var img = el("img");
+        img.src = p.imagem; img.alt = "";
+        c.appendChild(img);
+        return c;
+      }
+      var v = el("div", "capa vazia");
+      var t = (p.tech || []).filter(function (t) { return ICONOS[t]; })[0];
+      if (t) v.innerHTML = ICONOS[t];
+      return v;
+    }
     function somarModrinth(p, dl) {
       fetch("https://api.modrinth.com/v2/project/" + encodeURIComponent(p.modrinth))
         .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
@@ -744,6 +790,13 @@
       document.getElementById("dlg-title").textContent = tx(p, "nome");
       var body = document.getElementById("dlg-body");
       body.textContent = "";
+      var velha = dlg.querySelector(".dlg-capa");
+      if (velha) velha.remove();
+      if (p.imagem) {
+        var im = el("img", "dlg-capa");
+        im.src = p.imagem; im.alt = "";
+        body.before(im);
+      }
       body.appendChild(el("p", null, tx(p, "detalhes")));
       body.appendChild(el("h4", null, emIngles() ? "Features" : "Funcionalidades"));
       var ul = el("ul");
@@ -792,6 +845,7 @@
       (c.subs || []).forEach(function (s) { s.itens.forEach(function (p) { todos.push(p); }); });
     });
     document.getElementById("gh-projetos").textContent = todos.length;
+    document.getElementById("hero-projetos").textContent = todos.length;
   })();
 
   document.getElementById("ano").textContent = new Date().getFullYear();
@@ -800,9 +854,9 @@
   (function () {
     var TEXTOS = {
       pt: { title: "RibeiroMD", desc: "Portefólio Ribeiro", botao: "ENG", fechar: "Fechar", cats: "Categorias de projetos", subs: "Subcategorias",
-            avatar: "Avatar do Ribeiro: personagem de cabelo castanho a saborear uma chávena de café", foto: "Foto de perfil do GitHub", grafico: "Gráfico de contribuições do GitHub no último ano" },
+            avatar: "Avatar do Ribeiro: personagem de cabelo castanho a saborear uma chávena de café", foto: "Foto de perfil do GitHub", grafico: "Gráfico de contribuições do GitHub nos últimos 6 meses" },
       en: { title: "RibeiroMD", desc: "Ribeiro's portfolio", botao: "PT", fechar: "Close", cats: "Project categories", subs: "Subcategories",
-            avatar: "Ribeiro's avatar: a brown-haired character enjoying a cup of coffee", foto: "GitHub profile picture", grafico: "GitHub contributions chart for the last year" }
+            avatar: "Ribeiro's avatar: a brown-haired character enjoying a cup of coffee", foto: "GitHub profile picture", grafico: "GitHub contributions chart for the last 6 months" }
     };
     function mudaIdioma(l, inicio) {
       var t = TEXTOS[l];
