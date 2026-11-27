@@ -382,7 +382,7 @@
         </div>
         <ul class="hero-stats" hidden>
           <li><strong id="hero-projetos">–</strong><span lang="pt">projetos</span><span lang="en">projects</span></li>
-          <li><strong>974</strong><span lang="pt">downloads no CurseForge</span><span lang="en">CurseForge downloads</span></li>
+          <li><strong id="hero-downloads">988</strong><span lang="pt">downloads no CurseForge</span><span lang="en">CurseForge downloads</span></li>
         </ul>
       </div>
       <div class="avatar-wrap">
@@ -447,7 +447,7 @@
 
       <div class="gh-stats">
         <div class="gh-stat"><strong id="gh-projetos">–</strong><span><span lang="pt">Projetos</span><span lang="en">Projects</span></span></div>
-        <div class="gh-stat"><strong id="gh-downloads">974</strong><span><span lang="pt">Downloads no CurseForge</span><span lang="en">CurseForge downloads</span></span></div>
+        <div class="gh-stat"><strong id="gh-downloads">988</strong><span><span lang="pt">Downloads no CurseForge</span><span lang="en">CurseForge downloads</span></span></div>
         <div class="gh-stat" id="gh-contribs-card" hidden><strong id="gh-contribs"></strong><span><span lang="pt">Contribuições (mês)</span><span lang="en">Contributions (month)</span></span></div>
       </div>
 
@@ -586,6 +586,48 @@
       .then(function (u) {
         if (u.bio) set("gh-bio", u.bio);
       }).catch(function () {});
+  })();
+
+  // downloads do CurseForge, como no DMRCFStatus: primeiro o histórico que ele guarda
+  // (rápido, mas pode ter umas horas), depois o valor atual de cada mod no CFWidget.
+  // Se tudo falhar, fica o número escrito à mão no HTML.
+  (function () {
+    var porMod = {};
+    function mostrar() {
+      var total = Object.keys(porMod).reduce(function (soma, id) { return soma + porMod[id]; }, 0);
+      if (!total) return;
+      ["gh-downloads", "hero-downloads"].forEach(function (id) {
+        var el = document.getElementById(id);
+        if (el) el.textContent = total;
+      });
+    }
+    // o CFWidget responde 202/vazio enquanto vai buscar os dados, por isso tenta mais vezes
+    function pedirMod(id, tentativa) {
+      return fetch("https://api.cfwidget.com/" + id)
+        .then(function (r) { return r.status === 200 ? r.json() : null; })
+        .catch(function () { return null; })
+        .then(function (d) {
+          if (d && d.downloads) {
+            porMod[id] = d.downloads.total;
+          } else if (tentativa < 3) {
+            return new Promise(function (ok) { setTimeout(ok, 1500 * (tentativa + 1)); })
+              .then(function () { return pedirMod(id, tentativa + 1); });
+          }
+        });
+    }
+    fetch("https://ribeiro-md.github.io/DMRCFStatus/historico.js")
+      .then(function (r) { if (!r.ok) throw new Error(r.status); return r.text(); })
+      .then(function (txt) {
+        var registos = JSON.parse(txt.slice(txt.indexOf("=") + 1).trim().replace(/;$/, ""));
+        // há registos a que falta algum mod, por isso fica o último valor conhecido de cada um
+        registos.forEach(function (r) {
+          Object.keys(r.p).forEach(function (id) { porMod[id] = r.p[id].d || 0; });
+        });
+        mostrar();
+        return Promise.all(Object.keys(porMod).map(function (id) { return pedirMod(id, 0); }));
+      })
+      .then(mostrar)
+      .catch(function () {});
   })();
 
   /* PROJETOS: a lista está em projetos.js */
