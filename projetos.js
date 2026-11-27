@@ -17,7 +17,7 @@
      destaque      true: aparece na aba Destaques
      imagem        captura em img/capas/, aparece no topo do cartão
 
-   Downloads do CurseForge atualizados a 23/11/2026.
+   Downloads do CurseForge atualizados a 27/11/2026.
 ------------------------------------------------------------------- */
 window.PROJETOS = [
   {
@@ -574,7 +574,7 @@ window.PROJETOS = [
               ]
             },
             "tag": "Mod · Fabric",
-            "downloads": 168,
+            "downloads": 171,
             "resumo": "Alertas quando o peixe morde a isca e quando se apanha um caranguejo.",
             "detalhes": "Mod de cliente que te avisa no momento certo durante a pesca, para não teres de olhar para o ecrã o tempo todo. Publicado no CurseForge.",
             "funcionalidades": [
@@ -611,7 +611,7 @@ window.PROJETOS = [
               ]
             },
             "tag": "Mod · Fabric - NeoForge",
-            "downloads": 249,
+            "downloads": 407,
             "resumo": "Torna andar a cavalo mais imersivo: inclinação nas curvas, balanço do galope e impacto ao aterrar.",
             "detalhes": "Mod de cliente que dá vida à câmara quando andas a cavalo. Tu e o cavalo inclinam nas curvas como numa mota, a câmara acompanha o ritmo do galope e sente o impacto quando aterras de um salto. Publicado no CurseForge.",
             "funcionalidades": [
@@ -652,7 +652,7 @@ window.PROJETOS = [
               ]
             },
             "tag": "Mod · Fabric - NeoForge - Quilt - Forge",
-            "downloads": 151,
+            "downloads": 167,
             "resumo": "Troca o botão do Realms no menu inicial por um botão para o teu servidor favorito.",
             "detalhes": "Mod de cliente que põe o teu servidor favorito no menu inicial, no lugar do botão do Realms, com o ícone do servidor. Entras com um clique, sem passar pela lista de servidores. Publicado no CurseForge.",
             "funcionalidades": [
@@ -732,7 +732,7 @@ window.PROJETOS = [
               ]
             },
             "tag": "Mod · Fabric",
-            "downloads": 62,
+            "downloads": 64,
             "resumo": "Avisa-te no Discord quando és desconectado de um servidor.",
             "detalhes": "Mod de cliente que te avisa no Discord, por webhook, quando és kickado, o servidor vai abaixo ou perdes a ligação. A mensagem diz a conta, o servidor, o tempo online e o motivo. Ideal para quem deixa o jogo AFK.",
             "funcionalidades": [
@@ -792,7 +792,8 @@ window.PROJETOS = [
             "tech": [
               "Fabric",
               "NeoForge"
-            ]
+            ],
+            "downloads": 110
           },
           {
             "nome": "AFK Optimizer",
